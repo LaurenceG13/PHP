@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Créer un nouvel article</title>
+		<link href="../../include/account.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<h1>Créer un nouvel article</h1>
+		<br />
+		<form action="../catalogue/create_catalogue.php" method="POST">
+			ID: <input type="text" name="id" value="" />
+			<br />
+			<br />
+			Nom: <input type="text" name="name" value="" />
+			<br />
+			<br />
+			Prix: <input type="text" name="price" value="" />
+			<br />
+			<br />
+			Catégories (séparer les différentes catégories par des espaces): <input type="text" name="categorie" value="" />
+			<br />
+			<br />
+			<input type="submit" name="submit" value="OK" />
+		</form>
+	</body>
+</html>

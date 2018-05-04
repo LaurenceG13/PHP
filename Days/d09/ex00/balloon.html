@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+    <style>
+      .balloon_style
+      {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="balloon_style" id="balloon_id"></div>
+    <script type="text/javascript">
+      var my_element = document.getElementById("balloon_id");
+      var element_deflate = my_element.addEventListener("click", ft_inflate, false);
+      var element_inflate = my_element.addEventListener("mouseout", ft_deflate, false);
+
+      function ft_offset_balloon(my_element, delta)
+      {
+        my_element.style.width = my_element.offsetWidth + delta + 'px';
+        my_element.style.height = my_element.offsetHeight + delta + 'px';
+      }
+
+      function ft_loop_color(my_element, color1, color2, color3)
+      {
+        if (my_element.style.backgroundColor == '' || my_element.style.backgroundColor == color1)
+          my_element.style.backgroundColor = color2;
+        else if (my_element.style.backgroundColor == color2)
+          my_element.style.backgroundColor = color3;
+        else if (my_element.style.backgroundColor == color3)
+          my_element.style.backgroundColor = color1;
+      }
+
+      function ft_inflate()
+      {
+        ft_offset_balloon(my_element, 10);
+        ft_loop_color(my_element, 'red', 'green', 'blue');
+        if (my_element.style.width > '420px')
+        {
+          my_element.style.height = '200px';
+          my_element.style.width = '200px';
+        }
+      }
+
+      function ft_deflate()
+      {
+        if (my_element.style.width > '200px')
+          ft_offset_balloon(my_element, -5);
+        ft_loop_color(my_element, 'red', 'blue', 'green');
+      }
+  	</script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calc</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <input type="text" id="gauche" />
+  	<select name="select" id="select">
+      <option value="+" selected>+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+  	</select>
+  	<input type="text" id="droite">
+  	<input type="submit" value="Try me!" id="calc">
+
+    <script type="text/javascript">
+      var my_element = document.getElementById("calc");
+      my_element.addEventListener("click", ft_calculate);
+
+      function ft_is_empty(str)
+      {
+        if (str.length === 0 || !str.trim())
+          return (true);
+        return (false);
+      }
+
+      function ft_is_numeric(str)
+      {
+        var format = new RegExp(/^([0-9]*)$/);
+        if (format.test(str))
+          return (true);
+        return (false);
+      }
+
+      function ft_calculate()
+      {
+        var op = document.getElementById("select").value;
+        var str_g = document.getElementById("gauche").value;
+        var str_d = document.getElementById("droite").value;
+        var format_g = new RegExp(/^([0-9]*)$/);
+    		var format_d = new RegExp(/^([0-9]*)$/);
+
+        if (ft_is_empty(str_g) == true || ft_is_empty(str_d) == true)
+          alert("Error :(");
+        else
+        {
+          if (ft_is_numeric(str_g) == true && ft_is_numeric(str_d) == true)
+          {
+            var int_g = parseInt(str_g);
+            var int_d = parseInt(str_d);
+            if (op == "+")
+              result = int_g + int_d;
+            else if (op == "-")
+              result = int_g - int_d;
+            else if (op == "*")
+              result = int_g * int_d;
+            else if (op == "/" || op == "%")
+            {
+              if (int_d == 0)
+                result = "It’s over 9000";
+              else
+              {
+                if (op == "/")
+                  result = int_g / int_d;
+                else
+                  result = int_g % int_d;
+              }
+            }
+            alert(result);
+            console.log(result);
+
+          }
+          else
+            alert("Error :(");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Modifier le login</title>
+		<link href="../../include/account.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<h1>Modifier le login</h1>
+		<br />
+		<form action="../account/modif_admin_login.php" method="POST">
+			Ancien identifiant: <input type="text" name="oldlog" value="" />
+			<br />
+			<br />
+			Nouvel identifiant:<input type="text" name="newlog" value="" />
+			<br />
+			<br />
+			Mot de passe: <input type="password" name="pwd" value="" />
+			<br />
+			<br />
+			<input type="submit" name="submit" value="OK" />
+		</form>
+	</body>
+</html>

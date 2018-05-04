@@ -1,0 +1,19 @@
+<style>
+  body {
+       font-family: sans-serif, arial, monospace, sans-serif;
+  }
+  h1 {
+    font-family: sans-serif, arial, monospace, sans-serif;
+    color: rgb(81, 170, 255);
+  }
+  p.warning {
+    font-family: sans-serif, arial, monospace, sans-serif;
+    font-style: italic;
+    font-size: small;
+    color: rgb(255, 80, 80);
+  }
+  form {
+    font-family: sans-serif, arial, monospace, sans-serif;
+    font-size: medium;
+  }
+</style>
